@@ -4,9 +4,27 @@ function tabularTable(element) {
     var rows = body.querySelectorAll("tr");
 
     var n = rows.length/2;
+
+    var tr = document.createElement("tr");
+    var th = document.createElement("th");
+    th.textContent = rows[0].firstElementChild.textContent.split("/")[0] + " [n (%)]";
+    tr.appendChild(th);
+    body.insertBefore(tr, body.firstElementChild);
+
+    var p = rows[0].querySelectorAll("td").length;
+    for (var i = 0; i < p; i++) {
+        var td = document.createElement("td");
+        tr.appendChild(td);
+    }
+
     for (var i = 0; i < n; i++) {
+        var thn = rows[i].querySelectorAll("th")[0];
         var tdn = rows[i].querySelectorAll("td");
         var tdp = rows[n + i].querySelectorAll("td");
+
+        var level = thn.textContent.split("/");
+        level.shift();
+        thn.textContent = level.join("/");
 
         for (var j = 0; j < tdn.length; j++) {
             tdn[j].textContent += " (" + tdp[j].textContent + ")";
@@ -23,8 +41,11 @@ function tabularMean(element) {
     var body = table.getElementsByTagName("tbody")[0];
     var rows = body.querySelectorAll("tr");
 
+    var thm = rows[1].querySelectorAll("th")[0];
     var tdm = rows[1].querySelectorAll("td");
     var tds = rows[2].querySelectorAll("td");
+
+    thm.textContent = thm.textContent.split("/")[0] + " [mean (sd)]";
 
     for (var j = 0; j < tdm.length; j++) {
         tdm[j].textContent += " (" + tds[j].textContent + ")";
@@ -63,7 +84,46 @@ function tabularCombine(element) {
         if (t2 !== undefined)
             tabularUnion(t1, t2);
     }
+
+    return t1;
+}
+
+
+function tabularSelect(element, column) {
+    var order = {};
+    var head = element.querySelectorAll("thead")[0]
+        .querySelectorAll("tr")[0];
+    var hth = head.querySelectorAll("th");
+    for (var i = 0; i < hth.length; i++)
+        order[hth[i].textContent] = i;
+
+    for (var i = 0; i < column.length; i++) {
+        var th = document.createElement("th");
+        var loc = order[column[i]];
+        th.textContent = hth[loc].textContent;
+        head.appendChild(th);
+        hth[loc].parentElement.removeChild(hth[loc]);
+    }
+    var body = element.querySelectorAll("tbody")[0];
+    var row = body.querySelectorAll("tr");
+    console.log(order);
+    for (var i = 0; i < row.length; i++) {
+        var btd = row[i].querySelectorAll("td");
+        for (var j = 0; j < column.length; j++) {
+            var td = document.createElement("td");
+            var loc = order[column[j]];
+            td.textContent = btd[loc].textContent;
+            row[i].appendChild(td);
+            btd[loc].parentElement.removeChild(btd[loc]);
+        }
+    }
 }
 
 var tabular = document.getElementsByClassName("tabulator");
-tabularCombine(tabular[0]);
+var t0 = tabularCombine(tabular[0]);
+
+tabularSelect(t0, [
+    "cyl/4:am/0", "cyl/4:am/1", "cyl/4",
+    "cyl/6:am/0", "cyl/6:am/1", "cyl/6",
+    "cyl/8:am/0", "cyl/8:am/1", "cyl/8",
+    "(Intercept)"]);

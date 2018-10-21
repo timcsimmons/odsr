@@ -80,11 +80,11 @@
 <tbody>
 <tr>
 <th>(Intercept)</th>
-<td class="td-r-n">0.949388640938477</td><td class="td-r-n">0.0699718425289895</td><td class="td-r-n">13.5681526543358</td><td class="td-r-n">1.3073539807782e-38</td>
+<td class="td-r-n">1.05453110526077</td><td class="td-r-n">0.0680937180097672</td><td class="td-r-n">15.4864668295762</td><td class="td-r-n">1.21629768130778e-48</td>
 </tr>
 <tr>
 <th>x</th>
-<td class="td-r-n">2.00938555290305</td><td class="td-r-n">0.0112769835090054</td><td class="td-r-n">178.184667140678</td><td class="td-r-n">0</td>
+<td class="td-r-n">1.98950601647307</td><td class="td-r-n">0.0109742963356277</td><td class="td-r-n">181.287797925977</td><td class="td-r-n">0</td>
 </tr>
 </tbody>
 </table>
@@ -95,18 +95,18 @@ lm(formula = y ~ x)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--3.1066 -0.6977 -0.0092  0.6862  3.5511 
+-4.0867 -0.6844  0.0176  0.6826  3.0407 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  0.94939    0.06997   13.57   <2e-16 ***
-x            2.00939    0.01128  178.19   <2e-16 ***
+(Intercept)  1.05453    0.06809   15.49   <2e-16 ***
+x            1.98951    0.01097  181.29   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 1.024 on 998 degrees of freedom
-Multiple R-squared:  0.9695,	Adjusted R-squared:  0.9695 
-F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
+Residual standard error: 0.9968 on 998 degrees of freedom
+Multiple R-squared:  0.9705,	Adjusted R-squared:  0.9705 
+F-statistic: 3.287e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 </pre>
 
 <h1>Tabular output</h1>
@@ -119,13 +119,13 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>1</th>
-<td class="td-r-n">32</td><td class="td-r-n">11</td><td class="td-r-n">7</td><td class="td-r-n">14</td><td class="td-r-n">19</td><td class="td-r-n">13</td>
+<td class="td-r-n">32</td><td class="td-r-n">11</td><td class="td-r-n">7</td><td class="td-r-n">14</td><td class="td-r-n">3</td><td class="td-r-n">4</td><td class="td-r-n">12</td><td class="td-r-n">8</td><td class="td-r-n">3</td><td class="td-r-n">2</td>
 </tr>
 </tbody>
 </table>
@@ -135,21 +135,21 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>mpg/n</th>
-<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">19</td><td class="td-r-c">13</td>
+<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">3</td><td class="td-r-c">4</td><td class="td-r-c">12</td><td class="td-r-c">8</td><td class="td-r-c">3</td><td class="td-r-c">2</td>
 </tr>
 <tr>
 <th>mpg/mean</th>
-<td class="td-r-c">20.1</td><td class="td-r-c">26.7</td><td class="td-r-c">19.7</td><td class="td-r-c">15.1</td><td class="td-r-c">17.1</td><td class="td-r-c">24.4</td>
+<td class="td-r-c">20.1</td><td class="td-r-c">26.7</td><td class="td-r-c">19.7</td><td class="td-r-c">15.1</td><td class="td-r-c">22.9</td><td class="td-r-c">19.1</td><td class="td-r-c">15.1</td><td class="td-r-c">28.1</td><td class="td-r-c">20.6</td><td class="td-r-c">15.4</td>
 </tr>
 <tr>
 <th>mpg/sd</th>
-<td class="td-r-c">6.0</td><td class="td-r-c">4.5</td><td class="td-r-c">1.5</td><td class="td-r-c">2.6</td><td class="td-r-c">3.8</td><td class="td-r-c">6.2</td>
+<td class="td-r-c">6.0</td><td class="td-r-c">4.5</td><td class="td-r-c">1.5</td><td class="td-r-c">2.6</td><td class="td-r-c">1.5</td><td class="td-r-c">1.6</td><td class="td-r-c">2.8</td><td class="td-r-c">4.5</td><td class="td-r-c">0.8</td><td class="td-r-c">0.6</td>
 </tr>
 </tbody>
 </table>
@@ -159,21 +159,21 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>disp/n</th>
-<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">19</td><td class="td-r-c">13</td>
+<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">3</td><td class="td-r-c">4</td><td class="td-r-c">12</td><td class="td-r-c">8</td><td class="td-r-c">3</td><td class="td-r-c">2</td>
 </tr>
 <tr>
 <th>disp/mean</th>
-<td class="td-r-c">230.7</td><td class="td-r-c">105.1</td><td class="td-r-c">183.3</td><td class="td-r-c">353.1</td><td class="td-r-c">290.4</td><td class="td-r-c">143.5</td>
+<td class="td-r-c">230.7</td><td class="td-r-c">105.1</td><td class="td-r-c">183.3</td><td class="td-r-c">353.1</td><td class="td-r-c">135.9</td><td class="td-r-c">204.6</td><td class="td-r-c">357.6</td><td class="td-r-c">93.6</td><td class="td-r-c">155.0</td><td class="td-r-c">326.0</td>
 </tr>
 <tr>
 <th>disp/sd</th>
-<td class="td-r-c">123.9</td><td class="td-r-c">26.9</td><td class="td-r-c">41.6</td><td class="td-r-c">67.8</td><td class="td-r-c">110.2</td><td class="td-r-c">87.2</td>
+<td class="td-r-c">123.9</td><td class="td-r-c">26.9</td><td class="td-r-c">41.6</td><td class="td-r-c">67.8</td><td class="td-r-c">14.0</td><td class="td-r-c">44.7</td><td class="td-r-c">71.8</td><td class="td-r-c">20.5</td><td class="td-r-c">8.7</td><td class="td-r-c">35.4</td>
 </tr>
 </tbody>
 </table>
@@ -183,21 +183,21 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>hp/n</th>
-<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">19</td><td class="td-r-c">13</td>
+<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">3</td><td class="td-r-c">4</td><td class="td-r-c">12</td><td class="td-r-c">8</td><td class="td-r-c">3</td><td class="td-r-c">2</td>
 </tr>
 <tr>
 <th>hp/mean</th>
-<td class="td-r-c">146.7</td><td class="td-r-c">82.6</td><td class="td-r-c">122.3</td><td class="td-r-c">209.2</td><td class="td-r-c">160.3</td><td class="td-r-c">126.8</td>
+<td class="td-r-c">146.7</td><td class="td-r-c">82.6</td><td class="td-r-c">122.3</td><td class="td-r-c">209.2</td><td class="td-r-c">84.7</td><td class="td-r-c">115.2</td><td class="td-r-c">194.2</td><td class="td-r-c">81.9</td><td class="td-r-c">131.7</td><td class="td-r-c">299.5</td>
 </tr>
 <tr>
 <th>hp/sd</th>
-<td class="td-r-c">68.6</td><td class="td-r-c">20.9</td><td class="td-r-c">24.3</td><td class="td-r-c">51.0</td><td class="td-r-c">53.9</td><td class="td-r-c">84.1</td>
+<td class="td-r-c">68.6</td><td class="td-r-c">20.9</td><td class="td-r-c">24.3</td><td class="td-r-c">51.0</td><td class="td-r-c">19.7</td><td class="td-r-c">9.2</td><td class="td-r-c">33.4</td><td class="td-r-c">22.7</td><td class="td-r-c">37.5</td><td class="td-r-c">50.2</td>
 </tr>
 </tbody>
 </table>
@@ -207,21 +207,21 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>drat/n</th>
-<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">19</td><td class="td-r-c">13</td>
+<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">3</td><td class="td-r-c">4</td><td class="td-r-c">12</td><td class="td-r-c">8</td><td class="td-r-c">3</td><td class="td-r-c">2</td>
 </tr>
 <tr>
 <th>drat/mean</th>
-<td class="td-r-c">3.6</td><td class="td-r-c">4.1</td><td class="td-r-c">3.6</td><td class="td-r-c">3.2</td><td class="td-r-c">3.3</td><td class="td-r-c">4.0</td>
+<td class="td-r-c">3.6</td><td class="td-r-c">4.1</td><td class="td-r-c">3.6</td><td class="td-r-c">3.2</td><td class="td-r-c">3.8</td><td class="td-r-c">3.4</td><td class="td-r-c">3.1</td><td class="td-r-c">4.2</td><td class="td-r-c">3.8</td><td class="td-r-c">3.9</td>
 </tr>
 <tr>
 <th>drat/sd</th>
-<td class="td-r-c">0.5</td><td class="td-r-c">0.4</td><td class="td-r-c">0.5</td><td class="td-r-c">0.4</td><td class="td-r-c">0.4</td><td class="td-r-c">0.4</td>
+<td class="td-r-c">0.5</td><td class="td-r-c">0.4</td><td class="td-r-c">0.5</td><td class="td-r-c">0.4</td><td class="td-r-c">0.1</td><td class="td-r-c">0.6</td><td class="td-r-c">0.2</td><td class="td-r-c">0.4</td><td class="td-r-c">0.2</td><td class="td-r-c">0.5</td>
 </tr>
 </tbody>
 </table>
@@ -231,21 +231,21 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>wt/n</th>
-<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">19</td><td class="td-r-c">13</td>
+<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">3</td><td class="td-r-c">4</td><td class="td-r-c">12</td><td class="td-r-c">8</td><td class="td-r-c">3</td><td class="td-r-c">2</td>
 </tr>
 <tr>
 <th>wt/mean</th>
-<td class="td-r-c">3.2</td><td class="td-r-c">2.3</td><td class="td-r-c">3.1</td><td class="td-r-c">4.0</td><td class="td-r-c">3.8</td><td class="td-r-c">2.4</td>
+<td class="td-r-c">3.2</td><td class="td-r-c">2.3</td><td class="td-r-c">3.1</td><td class="td-r-c">4.0</td><td class="td-r-c">2.9</td><td class="td-r-c">3.4</td><td class="td-r-c">4.1</td><td class="td-r-c">2.0</td><td class="td-r-c">2.8</td><td class="td-r-c">3.4</td>
 </tr>
 <tr>
 <th>wt/sd</th>
-<td class="td-r-c">1.0</td><td class="td-r-c">0.6</td><td class="td-r-c">0.4</td><td class="td-r-c">0.8</td><td class="td-r-c">0.8</td><td class="td-r-c">0.6</td>
+<td class="td-r-c">1.0</td><td class="td-r-c">0.6</td><td class="td-r-c">0.4</td><td class="td-r-c">0.8</td><td class="td-r-c">0.4</td><td class="td-r-c">0.1</td><td class="td-r-c">0.8</td><td class="td-r-c">0.4</td><td class="td-r-c">0.1</td><td class="td-r-c">0.3</td>
 </tr>
 </tbody>
 </table>
@@ -255,21 +255,21 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>qsec/n</th>
-<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">19</td><td class="td-r-c">13</td>
+<td class="td-r-c">32</td><td class="td-r-c">11</td><td class="td-r-c">7</td><td class="td-r-c">14</td><td class="td-r-c">3</td><td class="td-r-c">4</td><td class="td-r-c">12</td><td class="td-r-c">8</td><td class="td-r-c">3</td><td class="td-r-c">2</td>
 </tr>
 <tr>
 <th>qsec/mean</th>
-<td class="td-r-c">17.8</td><td class="td-r-c">19.1</td><td class="td-r-c">18.0</td><td class="td-r-c">16.8</td><td class="td-r-c">18.2</td><td class="td-r-c">17.4</td>
+<td class="td-r-c">17.8</td><td class="td-r-c">19.1</td><td class="td-r-c">18.0</td><td class="td-r-c">16.8</td><td class="td-r-c">21.0</td><td class="td-r-c">19.2</td><td class="td-r-c">17.1</td><td class="td-r-c">18.4</td><td class="td-r-c">16.3</td><td class="td-r-c">14.6</td>
 </tr>
 <tr>
 <th>qsec/sd</th>
-<td class="td-r-c">1.8</td><td class="td-r-c">1.7</td><td class="td-r-c">1.7</td><td class="td-r-c">1.2</td><td class="td-r-c">1.8</td><td class="td-r-c">1.8</td>
+<td class="td-r-c">1.8</td><td class="td-r-c">1.7</td><td class="td-r-c">1.7</td><td class="td-r-c">1.2</td><td class="td-r-c">1.7</td><td class="td-r-c">0.8</td><td class="td-r-c">0.8</td><td class="td-r-c">1.1</td><td class="td-r-c">0.8</td><td class="td-r-c">0.1</td>
 </tr>
 </tbody>
 </table>
@@ -279,25 +279,25 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>vs/0</th>
-<td class="td-r-c">18</td><td class="td-r-c">1</td><td class="td-r-c">3</td><td class="td-r-c">14</td><td class="td-r-c">12</td><td class="td-r-c">6</td>
+<td class="td-r-c">18</td><td class="td-r-c">1</td><td class="td-r-c">3</td><td class="td-r-c">14</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">12</td><td class="td-r-c">1</td><td class="td-r-c">3</td><td class="td-r-c">2</td>
 </tr>
 <tr>
 <th>vs/1</th>
-<td class="td-r-c">14</td><td class="td-r-c">10</td><td class="td-r-c">4</td><td class="td-r-c">0</td><td class="td-r-c">7</td><td class="td-r-c">7</td>
+<td class="td-r-c">14</td><td class="td-r-c">10</td><td class="td-r-c">4</td><td class="td-r-c">0</td><td class="td-r-c">3</td><td class="td-r-c">4</td><td class="td-r-c">0</td><td class="td-r-c">7</td><td class="td-r-c">0</td><td class="td-r-c">0</td>
 </tr>
 <tr>
 <th>vs/0</th>
-<td class="td-r-c">56.2%</td><td class="td-r-c">9.1%</td><td class="td-r-c">42.9%</td><td class="td-r-c">100.0%</td><td class="td-r-c">63.2%</td><td class="td-r-c">46.2%</td>
+<td class="td-r-c">56.2%</td><td class="td-r-c">9.1%</td><td class="td-r-c">42.9%</td><td class="td-r-c">100.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">100.0%</td><td class="td-r-c">12.5%</td><td class="td-r-c">100.0%</td><td class="td-r-c">100.0%</td>
 </tr>
 <tr>
 <th>vs/1</th>
-<td class="td-r-c">43.8%</td><td class="td-r-c">90.9%</td><td class="td-r-c">57.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">36.8%</td><td class="td-r-c">53.8%</td>
+<td class="td-r-c">43.8%</td><td class="td-r-c">90.9%</td><td class="td-r-c">57.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">100.0%</td><td class="td-r-c">100.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">87.5%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td>
 </tr>
 </tbody>
 </table>
@@ -307,33 +307,33 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>gear/3</th>
-<td class="td-r-c">15</td><td class="td-r-c">1</td><td class="td-r-c">2</td><td class="td-r-c">12</td><td class="td-r-c">15</td><td class="td-r-c">0</td>
+<td class="td-r-c">15</td><td class="td-r-c">1</td><td class="td-r-c">2</td><td class="td-r-c">12</td><td class="td-r-c">1</td><td class="td-r-c">2</td><td class="td-r-c">12</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td>
 </tr>
 <tr>
 <th>gear/4</th>
-<td class="td-r-c">12</td><td class="td-r-c">8</td><td class="td-r-c">4</td><td class="td-r-c">0</td><td class="td-r-c">4</td><td class="td-r-c">8</td>
+<td class="td-r-c">12</td><td class="td-r-c">8</td><td class="td-r-c">4</td><td class="td-r-c">0</td><td class="td-r-c">2</td><td class="td-r-c">2</td><td class="td-r-c">0</td><td class="td-r-c">6</td><td class="td-r-c">2</td><td class="td-r-c">0</td>
 </tr>
 <tr>
 <th>gear/5</th>
-<td class="td-r-c">5</td><td class="td-r-c">2</td><td class="td-r-c">1</td><td class="td-r-c">2</td><td class="td-r-c">0</td><td class="td-r-c">5</td>
+<td class="td-r-c">5</td><td class="td-r-c">2</td><td class="td-r-c">1</td><td class="td-r-c">2</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">2</td><td class="td-r-c">1</td><td class="td-r-c">2</td>
 </tr>
 <tr>
 <th>gear/3</th>
-<td class="td-r-c">46.9%</td><td class="td-r-c">9.1%</td><td class="td-r-c">28.6%</td><td class="td-r-c">85.7%</td><td class="td-r-c">78.9%</td><td class="td-r-c">0.0%</td>
+<td class="td-r-c">46.9%</td><td class="td-r-c">9.1%</td><td class="td-r-c">28.6%</td><td class="td-r-c">85.7%</td><td class="td-r-c">33.3%</td><td class="td-r-c">50.0%</td><td class="td-r-c">100.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td>
 </tr>
 <tr>
 <th>gear/4</th>
-<td class="td-r-c">37.5%</td><td class="td-r-c">72.7%</td><td class="td-r-c">57.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">21.1%</td><td class="td-r-c">61.5%</td>
+<td class="td-r-c">37.5%</td><td class="td-r-c">72.7%</td><td class="td-r-c">57.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">66.7%</td><td class="td-r-c">50.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">75.0%</td><td class="td-r-c">66.7%</td><td class="td-r-c">0.0%</td>
 </tr>
 <tr>
 <th>gear/5</th>
-<td class="td-r-c">15.6%</td><td class="td-r-c">18.2%</td><td class="td-r-c">14.3%</td><td class="td-r-c">14.3%</td><td class="td-r-c">0.0%</td><td class="td-r-c">38.5%</td>
+<td class="td-r-c">15.6%</td><td class="td-r-c">18.2%</td><td class="td-r-c">14.3%</td><td class="td-r-c">14.3%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">25.0%</td><td class="td-r-c">33.3%</td><td class="td-r-c">100.0%</td>
 </tr>
 </tbody>
 </table>
@@ -343,57 +343,57 @@ F-statistic: 3.175e+04 on 1 and 998 DF,  p-value: < 2.2e-16
 <thead>
 <tr>
 <td></td>
-<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>am/0</th><th>am/1</th>
+<th>(Intercept)</th><th>cyl/4</th><th>cyl/6</th><th>cyl/8</th><th>cyl/4:am/0</th><th>cyl/6:am/0</th><th>cyl/8:am/0</th><th>cyl/4:am/1</th><th>cyl/6:am/1</th><th>cyl/8:am/1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>carb/1</th>
-<td class="td-r-c">7</td><td class="td-r-c">5</td><td class="td-r-c">2</td><td class="td-r-c">0</td><td class="td-r-c">3</td><td class="td-r-c">4</td>
+<td class="td-r-c">7</td><td class="td-r-c">5</td><td class="td-r-c">2</td><td class="td-r-c">0</td><td class="td-r-c">1</td><td class="td-r-c">2</td><td class="td-r-c">0</td><td class="td-r-c">4</td><td class="td-r-c">0</td><td class="td-r-c">0</td>
 </tr>
 <tr>
 <th>carb/2</th>
-<td class="td-r-c">10</td><td class="td-r-c">6</td><td class="td-r-c">0</td><td class="td-r-c">4</td><td class="td-r-c">6</td><td class="td-r-c">4</td>
+<td class="td-r-c">10</td><td class="td-r-c">6</td><td class="td-r-c">0</td><td class="td-r-c">4</td><td class="td-r-c">2</td><td class="td-r-c">0</td><td class="td-r-c">4</td><td class="td-r-c">4</td><td class="td-r-c">0</td><td class="td-r-c">0</td>
 </tr>
 <tr>
 <th>carb/3</th>
-<td class="td-r-c">3</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">3</td><td class="td-r-c">3</td><td class="td-r-c">0</td>
+<td class="td-r-c">3</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">3</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">3</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td>
 </tr>
 <tr>
 <th>carb/4</th>
-<td class="td-r-c">10</td><td class="td-r-c">0</td><td class="td-r-c">4</td><td class="td-r-c">6</td><td class="td-r-c">7</td><td class="td-r-c">3</td>
+<td class="td-r-c">10</td><td class="td-r-c">0</td><td class="td-r-c">4</td><td class="td-r-c">6</td><td class="td-r-c">0</td><td class="td-r-c">2</td><td class="td-r-c">5</td><td class="td-r-c">0</td><td class="td-r-c">2</td><td class="td-r-c">1</td>
 </tr>
 <tr>
 <th>carb/6</th>
-<td class="td-r-c">1</td><td class="td-r-c">0</td><td class="td-r-c">1</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">1</td>
+<td class="td-r-c">1</td><td class="td-r-c">0</td><td class="td-r-c">1</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">1</td><td class="td-r-c">0</td>
 </tr>
 <tr>
 <th>carb/8</th>
-<td class="td-r-c">1</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">1</td><td class="td-r-c">0</td><td class="td-r-c">1</td>
+<td class="td-r-c">1</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">1</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">0</td><td class="td-r-c">1</td>
 </tr>
 <tr>
 <th>carb/1</th>
-<td class="td-r-c">21.9%</td><td class="td-r-c">45.5%</td><td class="td-r-c">28.6%</td><td class="td-r-c">0.0%</td><td class="td-r-c">15.8%</td><td class="td-r-c">30.8%</td>
+<td class="td-r-c">21.9%</td><td class="td-r-c">45.5%</td><td class="td-r-c">28.6%</td><td class="td-r-c">0.0%</td><td class="td-r-c">33.3%</td><td class="td-r-c">50.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">50.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td>
 </tr>
 <tr>
 <th>carb/2</th>
-<td class="td-r-c">31.2%</td><td class="td-r-c">54.5%</td><td class="td-r-c">0.0%</td><td class="td-r-c">28.6%</td><td class="td-r-c">31.6%</td><td class="td-r-c">30.8%</td>
+<td class="td-r-c">31.2%</td><td class="td-r-c">54.5%</td><td class="td-r-c">0.0%</td><td class="td-r-c">28.6%</td><td class="td-r-c">66.7%</td><td class="td-r-c">0.0%</td><td class="td-r-c">33.3%</td><td class="td-r-c">50.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td>
 </tr>
 <tr>
 <th>carb/3</th>
-<td class="td-r-c">9.4%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">21.4%</td><td class="td-r-c">15.8%</td><td class="td-r-c">0.0%</td>
+<td class="td-r-c">9.4%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">21.4%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">25.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td>
 </tr>
 <tr>
 <th>carb/4</th>
-<td class="td-r-c">31.2%</td><td class="td-r-c">0.0%</td><td class="td-r-c">57.1%</td><td class="td-r-c">42.9%</td><td class="td-r-c">36.8%</td><td class="td-r-c">23.1%</td>
+<td class="td-r-c">31.2%</td><td class="td-r-c">0.0%</td><td class="td-r-c">57.1%</td><td class="td-r-c">42.9%</td><td class="td-r-c">0.0%</td><td class="td-r-c">50.0%</td><td class="td-r-c">41.7%</td><td class="td-r-c">0.0%</td><td class="td-r-c">66.7%</td><td class="td-r-c">50.0%</td>
 </tr>
 <tr>
 <th>carb/6</th>
-<td class="td-r-c">3.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">14.3%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">7.7%</td>
+<td class="td-r-c">3.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">14.3%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">33.3%</td><td class="td-r-c">0.0%</td>
 </tr>
 <tr>
 <th>carb/8</th>
-<td class="td-r-c">3.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">7.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">7.7%</td>
+<td class="td-r-c">3.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">7.1%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">0.0%</td><td class="td-r-c">50.0%</td>
 </tr>
 </tbody>
 </table>

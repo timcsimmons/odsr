@@ -39,7 +39,7 @@ foo$raw(summary(lm(y ~ x)))
 
 foo$h1("Tabular output")
 foo$title("Summary of cars")
-t1 <- tabulator(mtcars, ~ cyl + am)
+t1 <- tabulator(mtcars, ~ cyl + cyl:am)
 t1$n()
 t1$mean("mpg")
 t1$mean("disp")
