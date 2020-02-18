@@ -179,15 +179,28 @@ function tabularNestHeader(element) {
 }
 
 // Test
-var tabular = document.getElementsByClassName("tabulator");
-var t0 = tabularCombine(tabular[0]);
+function tabularTestExample() {
+    var tabular = document.getElementsByClassName("tabulator");
+    var t0 = tabularCombine(tabular[0]);
 
 
-tabularSelect(t0, [
-    "cyl/4:am/0", "cyl/4:am/1", "cyl/4",
-    "cyl/6:am/0", "cyl/6:am/1", "cyl/6",
-    "cyl/8:am/0", "cyl/8:am/1", "cyl/8",
-    "(Intercept)"]);
+    tabularSelect(t0, [
+        "cyl/4:am/0", "cyl/4:am/1", "cyl/4",
+        "cyl/6:am/0", "cyl/6:am/1", "cyl/6",
+        "cyl/8:am/0", "cyl/8:am/1", "cyl/8",
+        "(Intercept)"]);
 
 
-tabularNestHeader(t0);
+    tabularNestHeader(t0);
+
+    var t1 = tabularCombine(tabular[1]);
+
+    tabularSelect(t1, [
+        "Admit/Admitted:Gender/Male",
+        "Admit/Admitted:Gender/Female",
+        "Admit/Rejected:Gender/Male",
+        "Admit/Rejected:Gender/Female",
+        "(Intercept)"]);
+
+    tabularNestHeader(t1);
+}

@@ -20,13 +20,16 @@ lines(x, cos(x), lty=2)
 foo$png()
 
 
-foo$put("<p>Here is a paragraphic with <strong>emphasis</strong></p>")
+foo$put("<p>Here is a paragraph with <strong>emphasis</strong></p>")
 
 foo$h1("Printing data frames")
 
 foo$title("The first six rows of the iris data frame")
 iris6 <- iris[1:6, ]
 foo$print(iris6)
+
+foo$title("The first six rows of the iris data frame (w/o row names")
+foo$print(iris6, row.names=FALSE)
 
 
 foo$h1("Printing lm output")
@@ -51,4 +54,16 @@ t1$table("vs")
 t1$table("gear")
 t1$table("carb")
 foo$print(t1)
+
+
+foo$title("Summary of UCBAdmissions")
+
+. <- as.data.frame(UCBAdmissions)
+admissions <- .[rep(rownames(.), .$Freq), ]
+
+t2 <- tabulator(admissions, ~ Admit:Gender)
+t2$n()
+t2$table("Dept")
+foo$print(t2)
+
 foo$close()

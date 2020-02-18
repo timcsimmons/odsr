@@ -20,6 +20,7 @@ html <- function(htmlfile) {
      doc %<<% "<!DOCTYPE html>\n"
      doc %<<% "<html lang=\"en\">"
      doc %<<% "<head>\n<meta charset=\"utf-8\">\n</head>\n"
+     doc %<<% "<link rel=\"stylesheet\" href=\"output.css\">\n"
      doc %<<% "<body>\n"
 
      nfig <- 0L
@@ -62,7 +63,7 @@ html <- function(htmlfile) {
      }
 
      .print.matrix <- function(x) .print.data.frame(as.data.frame(x))
-     .print.data.frame <- function(x) {
+     .print.data.frame <- function(x, row.names=TRUE) {
          doc %<<% "<table>"
 
 
@@ -75,14 +76,14 @@ html <- function(htmlfile) {
 
          doc %<<% "<thead>"
          doc %<<% "<tr>"
-         doc %<<% "<td></td>"
+         if (row.names) doc %<<% "<td></td>"
          doc %<<% paste(sprintf("<th>%s</th>", colnames(x)), collapse="")
          doc %<<% "</tr>"
          doc %<<% "</thead>"
 
 
          doc %<<% "<tbody>"
-         row <- sprintf("<th>%s</th>", rownames(x))
+         if (row.names) row <- sprintf("<th>%s</th>", rownames(x))
          data <- do.call(
              paste0,
              lapply(x, function(x) {
@@ -92,7 +93,7 @@ html <- function(htmlfile) {
          n <- nrow(x)
          for (i in 1:n) {
              doc %<<% "<tr>"
-             doc %<<% row[i]
+             if (row.names) doc %<<% row[i]
              doc %<<% data[i]
              doc %<<% "</tr>"
          }
@@ -128,6 +129,7 @@ html <- function(htmlfile) {
 
      # Close the html document
      close <- function() {
+         doc %<<% "<script src=\"output.js\"></script>\n"
          doc %<<% "</body></html>"
          base::close(doc)
      }
