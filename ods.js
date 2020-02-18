@@ -27,6 +27,7 @@ function tabularTable(element) {
         var level = thn.textContent.split("/");
         level.shift();
         thn.textContent = level.join("/");
+        thn.setAttribute("class", "factor-level");
 
         for (var j = 0; j < tdn.length; j++) {
             tdn[j].textContent += " (" + tdp[j].textContent + ")";
@@ -60,6 +61,30 @@ function tabularMean(element) {
     return table;
 }
 
+// Combine medians with IQRs
+function tabularMedian(element) {
+    var table = element.firstElementChild;
+    var body = table.getElementsByTagName("tbody")[0];
+    var rows = body.querySelectorAll("tr");
+
+    var thm  = rows[0].querySelectorAll("th")[0];
+    var tdm  = rows[0].querySelectorAll("td");
+    var tdq1 = rows[1].querySelectorAll("td");
+    var tdq3 = rows[2].querySelectorAll("td");
+
+    thm.textContent = thm.textContent.split("/")[0] + " [median (Q1, Q3)]";
+
+    for (var j = 0; j < tdm.length; j++) {
+        tdm[j].textContent += " [" + tdq1[j].textContent + ", " + tdq3[j].textContent + "]";
+    }
+
+    rows[2].parentElement.removeChild(rows[2]);
+    rows[1].parentElement.removeChild(rows[1]);
+
+    return table;
+}
+
+
 // Put the rows of one table into another and remove the first
 function tabularUnion(element1, element2) {
     var body1 = element1.querySelectorAll("tbody")[0];
@@ -85,6 +110,8 @@ function tabularCombine(element) {
             t2 = tabularTable(section[i]);
         if (section[i].className === "tabulator-mean")
             t2 = tabularMean(section[i]);
+        if (section[i].className === "tabulator-median")
+            t2 = tabularMedian(section[i]);
 
         if (t2 !== undefined)
             tabularUnion(t1, t2);
@@ -176,31 +203,4 @@ function tabularNestHeader(element) {
             }
         }
     }
-}
-
-// Test
-function tabularTestExample() {
-    var tabular = document.getElementsByClassName("tabulator");
-    var t0 = tabularCombine(tabular[0]);
-
-
-    tabularSelect(t0, [
-        "cyl/4:am/0", "cyl/4:am/1", "cyl/4",
-        "cyl/6:am/0", "cyl/6:am/1", "cyl/6",
-        "cyl/8:am/0", "cyl/8:am/1", "cyl/8",
-        "(Intercept)"]);
-
-
-    tabularNestHeader(t0);
-
-    var t1 = tabularCombine(tabular[1]);
-
-    tabularSelect(t1, [
-        "Admit/Admitted:Gender/Male",
-        "Admit/Admitted:Gender/Female",
-        "Admit/Rejected:Gender/Male",
-        "Admit/Rejected:Gender/Female",
-        "(Intercept)"]);
-
-    tabularNestHeader(t1);
 }
